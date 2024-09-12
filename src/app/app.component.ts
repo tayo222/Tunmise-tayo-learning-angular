@@ -10,4 +10,7 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'Tunmise-Tayo-learning-angular';
+  projectId = 54;
+  attendance = true;
+
 }
