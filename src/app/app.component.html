@@ -1,0 +1,16 @@
+<div class="container">
+  <h2>User List</h2>
+  <div *ngFor="let user of userList" class="user-card">
+    <h3>{{ user.firstName }} {{ user.lastName }}</h3>
+    <div>
+      <p>ID: {{ user.id }}</p>
+      <p>Department: {{ user.department }}</p>
+      <p>On Call: {{ user.isOnCall ? 'Yes' : 'No' }}</p>
+    </div>
+    <div *ngIf="user.role === 'Doctor'">
+      <button (click)="toggleOnCallStatus(user)" class="toggle-button">
+        Toggle On-Call Status
+      </button>
+    </div>
+  </div>
+</div>
