@@ -2,11 +2,12 @@ import { Component } from "@angular/core";
 import { RouterOutlet } from '@angular/router';
 import { HospitalUser } from "./Shared/HospitalUser";
 import { JsonPipe, NgForOf } from "@angular/common";
+import {HospitalListComponent} from "./hospital-list/hospital-list.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgForOf, JsonPipe],
+  imports: [RouterOutlet, NgForOf, JsonPipe, HospitalListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
