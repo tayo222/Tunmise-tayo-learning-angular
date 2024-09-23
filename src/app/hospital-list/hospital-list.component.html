@@ -1,10 +1,7 @@
 <div class="hospital-list">
   <h2>Hospital Staff List</h2>
 
-  <app-hospital-list-item></app-hospital-list-item>
-  <app-hospital-list-item></app-hospital-list-item>
-  <app-hospital-list-item></app-hospital-list-item>
-  <app-hospital-list-item></app-hospital-list-item>
-  <app-hospital-list-item></app-hospital-list-item>
-
+  <ng-container *ngFor="let staff of hospitalStaff">
+    <app-hospital-list-item [staff]="staff"></app-hospital-list-item>
+  </ng-container>
 </div>
