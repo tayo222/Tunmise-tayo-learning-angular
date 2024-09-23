@@ -11,6 +11,7 @@ import {HospitalListItemComponent} from "../hospital-list-item/hospital-list-ite
   styleUrl: './hospital-list.component.css'
 })
 export class HospitalListComponent {
+
   hospitalStaff = [
     { id: 1, firstName: 'Dr. Alice', lastName: 'Smith', department: 'Cardiology', role: 'Doctor', isOnCall: true },
     { id: 2, firstName: 'Nurse John', lastName: 'Doe', department: 'Pediatrics', role: 'Nurse', isOnCall: false },
