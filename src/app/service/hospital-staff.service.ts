@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import hospitalStaff from '../Data/mock-content';
 
 @Injectable({
   providedIn: 'root'
@@ -6,4 +8,8 @@ import { Injectable } from '@angular/core';
 export class HospitalStaffService {
 
   constructor() { }
+
+  getHospitalStaff(): Observable<any[]> {
+    return of(hospitalStaff);
+  }
 }

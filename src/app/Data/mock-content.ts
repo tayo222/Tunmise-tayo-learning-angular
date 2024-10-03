@@ -1,4 +1,6 @@
-// data/mock-content.ts
+
+
+
 const hospitalStaff = [
   { id: 1, firstName: 'Dr. Alice', lastName: 'Smith', department: 'Cardiology', role: 'Doctor', isOnCall: true },
   { id: 2, firstName: 'Nurse John', lastName: 'Doe', department: 'Pediatrics', role: 'Nurse', isOnCall: false },

@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HospitalListItemComponent } from '../hospital-list-item/hospital-list-item.component';
-import hospitalStaff from '../Data/mock-content'; // Adjust the path if necessary
+import { HospitalStaffService } from '../service/hospital-staff.service';
 
 @Component({
   selector: 'app-hospital-list',
@@ -11,6 +11,14 @@ import hospitalStaff from '../Data/mock-content'; // Adjust the path if necessar
   templateUrl: './hospital-list.component.html',
   styleUrls: ['./hospital-list.component.css']
 })
-export class HospitalListComponent {
-  hospitalStaff = hospitalStaff; // Assign the imported array to the component property
+export class HospitalListComponent implements OnInit {
+  hospitalStaff: any[] = [];
+
+  constructor(private hospitalStaffService: HospitalStaffService) {}
+
+  ngOnInit(): void {
+    this.hospitalStaffService.getHospitalStaff().subscribe(staff => {
+      this.hospitalStaff = staff;
+    });
+  }
 }
