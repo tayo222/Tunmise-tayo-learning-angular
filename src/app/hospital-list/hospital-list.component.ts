@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
-import {HospitalListItemComponent} from "../hospital-list-item/hospital-list-item.component";
+
+import { Component, OnInit } from '@angular/core';
+import { HospitalListItemComponent } from '../hospital-list-item/hospital-list-item.component';
+import { HospitalStaffService } from '../services/hospital-staff.service';
+
 
 @Component({
   selector: 'app-hospital-list',
@@ -8,17 +11,23 @@ import {HospitalListItemComponent} from "../hospital-list-item/hospital-list-ite
     HospitalListItemComponent
   ],
   templateUrl: './hospital-list.component.html',
-  styleUrl: './hospital-list.component.css'
+  styleUrls: ['./hospital-list.component.css']
 })
-export class HospitalListComponent {
+export class HospitalListComponent implements OnInit {
+  hospitalStaff = []; // Initialize the array to hold hospital staff data
 
-  hospitalStaff = [
-    { id: 1, firstName: 'Dr. Alice', lastName: 'Smith', department: 'Cardiology', role: 'Doctor', isOnCall: true },
-    { id: 2, firstName: 'Nurse John', lastName: 'Doe', department: 'Pediatrics', role: 'Nurse', isOnCall: false },
-    { id: 3, firstName: 'Dr. Sarah', lastName: 'Lee', department: 'Neurology', role: 'Doctor', isOnCall: true },
-    { id: 4, firstName: 'Technician Bob', lastName: 'Brown', department: 'Radiology', role: 'Technician', isOnCall: false },
-    { id: 5, firstName: 'Dr. Emily', lastName: 'Johnson', department: 'Surgery', role: 'Surgeon', isOnCall: true }
-  ];
+  constructor(private hospitalStaffService: HospitalStaffService) {}
 
-
+  ngOnInit(): void {
+    // Fetch hospital staff data using the service, subscribing to the observable
+    this.hospitalStaffService.getHospitalStaff().subscribe(
+      staff => {
+        // @ts-ignore
+        this.hospitalStaff = staff; // Assign fetched staff to the component property
+      },
+      error => {
+        console.error('Error fetching hospital staff:', error); // Handle errors here
+      }
+    );
+  }
 }
