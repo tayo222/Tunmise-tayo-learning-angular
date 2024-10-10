@@ -1,9 +1,11 @@
 import {Component, Input} from '@angular/core';
+import { NgIf } from '@angular/common';
+
 
 @Component({
   selector: 'app-hospital-list-item',
   standalone: true,
-  imports: [],
+  imports: [NgIf,],
   templateUrl: './hospital-list-item.component.html',
   styleUrl: './hospital-list-item.component.css'
 })

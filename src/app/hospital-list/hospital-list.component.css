@@ -1,0 +1,5 @@
+.hospital-list-item {
+  border: 2px solid black; /* Set a 2 pixel border */
+  padding: 10px;          /* Optional: Add some padding for better appearance */
+  margin: 10px 0;        /* Optional: Add margin between items */
+}
