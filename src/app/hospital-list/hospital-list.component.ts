@@ -1,37 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-import { HospitalListItemComponent } from '../hospital-list-item/hospital-list-item.component';
 import { HospitalStaffService } from '../services/hospital-staff.service';
-import { CommonModule } from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 
 @Component({
   selector: 'app-hospital-list',
   standalone: true,
-  imports: [
-    HospitalListItemComponent,
-    CommonModule
-  ],
+  imports: [CommonModule, NgOptimizedImage],
   templateUrl: './hospital-list.component.html',
   styleUrls: ['./hospital-list.component.css']
 })
 export class HospitalListComponent implements OnInit {
-  hospitalStaff: any[] = [];
+  hospitalStaff: any[] = []; // Ensure this is populated
 
   constructor(private hospitalStaffService: HospitalStaffService) {}
 
   ngOnInit(): void {
-
-    this.fetchStaffById(1);
+    this.fetchAllStaff();
   }
-
-
-  fetchStaffById(id: number): void {
-    this.hospitalStaffService.getHospitalStaffById(id).subscribe(
+  fetchAllStaff(): void {
+    this.hospitalStaffService.getHospitalStaff().subscribe(
       staff => {
         this.hospitalStaff = staff;
       },
       error => {
-        console.error('Error fetching staff by ID:', error);
+        console.error('Error fetching staff:', error);
       }
     );
   }
+
 }

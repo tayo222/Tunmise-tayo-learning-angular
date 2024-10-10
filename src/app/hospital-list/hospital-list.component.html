@@ -1,7 +1,14 @@
 <div class="hospital-list">
-  <h2>Hospital Staff List</h2>
-
-  <ng-container *ngFor="let staff of hospitalStaff">
-    <app-hospital-list-item [staff]="staff"></app-hospital-list-item> <!-- Pass the staff object to the item component -->
-  </ng-container>
+  <h2>Hospital Staff</h2>
+  <ul>
+    <li *ngFor="let staff of hospitalStaff">
+      <img [ngSrc]="staff.imageUrl" alt="{{ staff.firstName }} {{ staff.lastName }}" class="staff-image" width="150" height="150"/>
+      <div class="staff-details">
+        <h3>{{ staff.firstName }} {{ staff.lastName }}</h3>
+        <p>Department: {{ staff.department }}</p>
+        <p>Role: {{ staff.role }}</p>
+        <p *ngIf="staff.isOnCall">Currently On Call</p>
+      </div>
+    </li>
+  </ul>
 </div>

@@ -1,0 +1,23 @@
+nav {
+  background-color: #f8f9fa; /* Light background */
+  padding: 10px; /* Spacing */
+}
+
+ul {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove default padding */
+}
+
+li {
+  display: inline; /* Align items horizontally */
+  margin-right: 15px; /* Spacing between links */
+}
+
+a {
+  text-decoration: none; /* Remove underline */
+  color: #007bff; /* Link color */
+}
+
+a.active {
+  font-weight: bold; /* Bold active link */
+}
