@@ -1,0 +1,36 @@
+<form [formGroup]="modifyForm">
+  <label for="firstName">First Name:</label>
+  <input id="firstName" formControlName="firstName" />
+  <div *ngIf="modifyForm.get('firstName').invalid && modifyForm.get('firstName').touched">
+    First Name is required.
+  </div>
+
+  <label for="lastName">Last Name:</label>
+  <input id="lastName" formControlName="lastName" />
+  <div *ngIf="modifyForm.get('lastName').invalid && modifyForm.get('lastName').touched">
+    Last Name is required.
+  </div>
+
+  <label for="department">Department:</label>
+  <input id="department" formControlName="department" />
+  <div *ngIf="modifyForm.get('department').invalid && modifyForm.get('department').touched">
+    Department is required.
+  </div>
+
+  <label for="role">Role:</label>
+  <input id="role" formControlName="role" />
+  <div *ngIf="modifyForm.get('role').invalid && modifyForm.get('role').touched">
+    Role is required.
+  </div>
+
+  <label>On Call:</label>
+  <input type="checkbox" formControlName="isOnCall" />
+
+  <label for="imageUrl">Image URL:</label>
+  <input id="imageUrl" formControlName="imageUrl" />
+  <div *ngIf="modifyForm.get('imageUrl').invalid && modifyForm.get('imageUrl').touched">
+    Image URL is required.
+  </div>
+
+  <button type="submit" [disabled]="modifyForm.invalid">Submit</button>
+</form>

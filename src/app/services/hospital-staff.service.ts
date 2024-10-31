@@ -1,8 +1,6 @@
-
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { mockHospitalStaff } from '../data/mock-hospital';
-
 
 @Injectable({
   providedIn: 'root'
@@ -11,12 +9,12 @@ export class HospitalStaffService {
 
   constructor() { }
 
-
+  // Retrieve all hospital staff
   getHospitalStaff(): Observable<any[]> {
     return of(mockHospitalStaff);
   }
 
-
+  // Retrieve a staff member by ID
   getHospitalStaffById(id: number): Observable<any | undefined> {
     const staff = mockHospitalStaff.find(item => item.id === id);
     return of(staff);
@@ -32,13 +30,13 @@ export class HospitalStaffService {
   updateHospitalStaff(updatedStaff: any): Observable<any[]> {
     const index = mockHospitalStaff.findIndex(item => item.id === updatedStaff.id);
     if (index !== -1) {
-      mockHospitalStaff[index] =  updatedStaff; // Update the staff member in the array
+      mockHospitalStaff[index] = updatedStaff; // Update the staff member in the array
     }
     return of(mockHospitalStaff); // Return the updated array wrapped in an Observable
   }
 
   // Delete: Remove a staff member by ID
-  deleteHospitalStaff(id: number):  Observable<any | undefined> {
+  deleteHospitalStaff(id: number): Observable<any | undefined> {
     const index = mockHospitalStaff.findIndex(item => item.id === id);
     if (index !== -1) {
       const removedStaff = mockHospitalStaff.splice(index, 1)[0]; // Remove the staff member
@@ -46,4 +44,6 @@ export class HospitalStaffService {
     }
     return of(undefined); // Return undefined wrapped in an Observable if not found
   }
+
+  // You don't need this empty deleteStaff method. You can directly call deleteHospitalStaff.
 }

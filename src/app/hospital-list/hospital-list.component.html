@@ -9,6 +9,10 @@
         <p>Role: {{ staff.role }}</p>
         <p *ngIf="staff.isOnCall">Currently On Call</p>
       </div>
+      <div class="staff-actions">
+        <button (click)="editStaff(staff.id)">Edit</button>
+        <button (click)="deleteStaff(staff.id)">Delete</button>
+      </div>
     </li>
   </ul>
 </div>

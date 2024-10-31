@@ -1,0 +1,38 @@
+<form [formGroup]="modifyForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="title">Title:</label>
+    <input id="title" formControlName="title">
+    <div *ngIf="!(!modifyForm.get('title')||!modifyForm.get('title'))">
+      Title is required.
+    </div>
+
+    <label for="description">Description:</label>
+    <textarea id="description" formControlName="description"></textarea>
+    <div *ngIf="modifyForm.get('description') && modifyForm.get('description')">
+      Description is required.
+    </div>
+  </div>
+
+  <div>
+    <label for="category">Category:</label>
+    <input id="category" formControlName="category">
+    <div *ngIf="modifyForm.get('category')&& modifyForm.get('category')">
+      Category is required.
+    </div>
+  </div>
+
+  <div>
+    <label for="imageUrl">Image URL:</label>
+    <input id="imageUrl" formControlName="imageUrl">
+    <div *ngIf="modifyForm.get('imageUrl') && modifyForm.get('imageUrl')">
+      Image URL is required.
+    </div>
+  </div>
+
+  <div>
+    <label>Published:</label>
+    <input type="checkbox" formControlName="isPublished">
+  </div>
+
+  <button type="submit" [disabled]="modifyForm.invalid">Add/Update Item</button>
+</form>
