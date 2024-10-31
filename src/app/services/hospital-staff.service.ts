@@ -32,7 +32,7 @@ export class HospitalStaffService {
   updateHospitalStaff(updatedStaff: any): Observable<any[]> {
     const index = mockHospitalStaff.findIndex(item => item.id === updatedStaff.id);
     if (index !== -1) {
-      mockHospitalStaff[index] = updatedStaff; // Update the staff member in the array
+      mockHospitalStaff[index] =  updatedStaff; // Update the staff member in the array
     }
     return of(mockHospitalStaff); // Return the updated array wrapped in an Observable
   }
