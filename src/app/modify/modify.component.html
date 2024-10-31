@@ -1,38 +1,23 @@
+<h2>Modify Staff Member</h2>
+
 <form [formGroup]="modifyForm" (ngSubmit)="onSubmit()">
-  <div>
-    <label for="title">Title:</label>
-    <input id="title" formControlName="title">
-    <div *ngIf="!(!modifyForm.get('title')||!modifyForm.get('title'))">
-      Title is required.
-    </div>
+  <label for="firstName">First Name:</label>
+  <input id="firstName" formControlName="firstName" required>
 
-    <label for="description">Description:</label>
-    <textarea id="description" formControlName="description"></textarea>
-    <div *ngIf="modifyForm.get('description') && modifyForm.get('description')">
-      Description is required.
-    </div>
-  </div>
+  <label for="lastName">Last Name:</label>
+  <input id="lastName" formControlName="lastName" required>
 
-  <div>
-    <label for="category">Category:</label>
-    <input id="category" formControlName="category">
-    <div *ngIf="modifyForm.get('category')&& modifyForm.get('category')">
-      Category is required.
-    </div>
-  </div>
+  <label for="department">Department:</label>
+  <input id="department" formControlName="department" required>
 
-  <div>
-    <label for="imageUrl">Image URL:</label>
-    <input id="imageUrl" formControlName="imageUrl">
-    <div *ngIf="modifyForm.get('imageUrl') && modifyForm.get('imageUrl')">
-      Image URL is required.
-    </div>
-  </div>
+  <label for="role">Role:</label>
+  <input id="role" formControlName="role" required>
 
-  <div>
-    <label>Published:</label>
-    <input type="checkbox" formControlName="isPublished">
-  </div>
+  <label for="isOnCall">On Call:</label>
+  <input type="checkbox" id="isOnCall" formControlName="isOnCall">
 
-  <button type="submit" [disabled]="modifyForm.invalid">Add/Update Item</button>
+  <label for="imageUrl">Image URL:</label>
+  <input id="imageUrl" formControlName="imageUrl" required>
+
+  <button type="submit">Add/Update Item</button>
 </form>

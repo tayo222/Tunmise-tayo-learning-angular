@@ -5,12 +5,13 @@ import { HospitalListComponent } from './app/hospital-list/hospital-list.compone
 import { PageNotFoundComponent } from './app/page-not-found/page-not-found.component'; // Ensure the path is correct
 import { ModifyListItemComponent } from './app/modify-list-item/modify-list-item.component'; // Ensure the path is correct
 import { appConfig } from './app/app.config';
+import {ModifyComponent} from "./app/modify/modify.component";
 
 // Define your routes
 const routes: Routes = [
   { path: '', redirectTo: 'hospital-list', pathMatch: 'full' }, // Redirect to hospital list on empty path
   { path: 'hospital-list', component: HospitalListComponent }, // Route to the hospital list component
-  { path: 'modify-list-item', component: ModifyListItemComponent }, // Route to modify list item component
+  { path: 'modify', component: ModifyComponent }, // Route to modify list item component
   { path: '**', component: PageNotFoundComponent } // Wildcard route for a 404 page
 ];
 

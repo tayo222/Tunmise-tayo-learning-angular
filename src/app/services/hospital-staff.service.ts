@@ -34,6 +34,19 @@ export class HospitalStaffService {
     }
     return of(mockHospitalStaff); // Return the updated array wrapped in an Observable
   }
+  addHospitalStaff(newStaff: any): Observable<any[]> {
+    // Generate a new ID for the new staff member
+    const newId = mockHospitalStaff.length ? Math.max(...mockHospitalStaff.map(staff => staff.id)) + 1 : 1;
+
+    // Assign the new ID to the new staff member
+    const staffWithId = { ...newStaff, id: newId };
+
+    // Add the new staff member to the mock data array
+    mockHospitalStaff.push(staffWithId);
+
+    // Return the updated array wrapped in an Observable
+    return of(mockHospitalStaff);
+  }
 
   // Delete: Remove a staff member by ID
   deleteHospitalStaff(id: number): Observable<any | undefined> {

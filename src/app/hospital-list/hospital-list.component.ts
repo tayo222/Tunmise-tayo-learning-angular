@@ -35,7 +35,7 @@ export class HospitalListComponent implements OnInit {
 
   editStaff(id: number): void {
     // Navigate to the ModifyComponent for editing the selected staff member
-    this.router.navigate(['/form', { id }]); // Ensure this matches your routing setup
+    this.router.navigate(['/modify', { id }]); // Ensure this matches your routing setup
   }
 
   deleteStaff(id: number): void {
