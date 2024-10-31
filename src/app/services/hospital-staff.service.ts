@@ -38,7 +38,7 @@ export class HospitalStaffService {
   }
 
   // Delete: Remove a staff member by ID
-  deleteHospitalStaff(id: number): Observable<any | undefined> {
+  deleteHospitalStaff(id: number):  Observable<any | undefined> {
     const index = mockHospitalStaff.findIndex(item => item.id === id);
     if (index !== -1) {
       const removedStaff = mockHospitalStaff.splice(index, 1)[0]; // Remove the staff member
