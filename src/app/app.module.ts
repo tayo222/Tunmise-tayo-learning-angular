@@ -5,9 +5,11 @@ import { AppComponent } from './app.component';
 import { HospitalListComponent } from './hospital-list/hospital-list.component'; // Ensure this path is correct
 import { ModifyComponent } from './modify/modify.component'; // Ensure this path is correct
 import { routes } from './app.routes';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
+    HttpClientModule,
     BrowserModule,
     RouterModule.forRoot(routes), // Configure routing
     HospitalListComponent, // Import standalone component
