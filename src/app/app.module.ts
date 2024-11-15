@@ -6,13 +6,14 @@ import { HospitalListComponent } from './hospital-list/hospital-list.component';
 import { ModifyComponent } from './modify/modify.component'; // Ensure this path is correct
 import { routes } from './app.routes';
 
+
 @NgModule({
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes), // Configure routing
     HospitalListComponent, // Import standalone component
-    ModifyComponent // Import standalone component
-  ],
+    ModifyComponent, // Import standalone component
+      ],
 
 })
 export class AppModule {}
