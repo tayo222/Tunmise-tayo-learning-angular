@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'; // Import Router for navigation
 import { HospitalStaffService } from '../services/hospital-staff.service';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
+import {OnCallStatusPipe} from "../on-call-status.pipe";
 
 @Component({
   selector: 'app-hospital-list',
   standalone: true,
-  imports: [CommonModule, NgOptimizedImage],
+  imports: [CommonModule, NgOptimizedImage, OnCallStatusPipe],
   templateUrl: './hospital-list.component.html',
   styleUrls: ['./hospital-list.component.css']
 })

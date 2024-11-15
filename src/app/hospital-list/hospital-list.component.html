@@ -2,21 +2,19 @@
   <h2>Hospital Staff</h2>
   <ul>
     <li *ngFor="let staff of hospitalStaff">
-      <!-- Apply TitleCasePipe to first and last name for consistency -->
       <img [src]="staff.imageUrl" alt="{{ staff.firstName | titlecase }} {{ staff.lastName | titlecase }}" class="staff-image" width="150" height="150"/>
 
       <div class="staff-details">
         <h3>{{ staff.firstName | titlecase }} {{ staff.lastName | titlecase }}</h3>
 
-        <!-- UpperCasePipe for consistent display of department and role -->
         <p>Department: {{ staff.department | uppercase }}</p>
         <p>Role: {{ staff.role | uppercase }}</p>
 
-        <!-- SlicePipe to limit displayed role length, e.g., first 15 characters -->
+        <!-- Using SlicePipe for department shortening -->
         <p>Department (Short): {{ staff.department | slice:0:15 }}</p>
 
-        <!-- Display a custom message based on the isOnCall boolean value -->
-        <p>On Call: {{ staff.isOnCall ? 'Yes' : 'No' }}</p>
+        <!-- Using your custom onCallStatus pipe -->
+        <p>On Call: {{ staff.isOnCall | onCallStatus }}</p>
       </div>
 
       <div class="staff-actions">
