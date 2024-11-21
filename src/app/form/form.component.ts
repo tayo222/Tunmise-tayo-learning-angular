@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {HighlightOnFocusDirective} from "../highlight-on-focus.directive";
 
 @Component({
   selector: 'app-form',
@@ -7,7 +8,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
   standalone: true,
   imports: [
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HighlightOnFocusDirective
   ],
   styleUrls: ['./form.component.css']
 })

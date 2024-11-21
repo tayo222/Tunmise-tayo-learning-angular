@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HospitalStaffService } from '../services/hospital-staff.service';
-import { HospitalUser } from '../Shared/HospitalUser'; // Import your interface here
+import { HospitalUser } from '../Shared/HospitalUser';
+import {HighlightOnFocusDirective} from "../highlight-on-focus.directive"; // Import your interface here
 
 @Component({
   selector: 'app-modify',
   templateUrl: './modify.component.html',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, HighlightOnFocusDirective],
   styleUrls: ['./modify.component.css']
 })
 export class ModifyComponent implements OnInit {

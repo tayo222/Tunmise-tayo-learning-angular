@@ -2,22 +2,52 @@
 
 <form [formGroup]="modifyForm" (ngSubmit)="onSubmit()">
   <label for="firstName">First Name:</label>
-  <input id="firstName" formControlName="firstName" required>
+  <input
+    id="firstName"
+    formControlName="firstName"
+    [appHighlightOnFocus]="'#d3f9d8'"
+  required
+  />
 
   <label for="lastName">Last Name:</label>
-  <input id="lastName" formControlName="lastName" required>
+  <input
+    id="lastName"
+    formControlName="lastName"
+    [appHighlightOnFocus]="'#f8d7da'"
+  required
+  />
 
   <label for="department">Department:</label>
-  <input id="department" formControlName="department" required>
+  <input
+    id="department"
+    formControlName="department"
+    [appHighlightOnFocus]="'#e6f7ff'"
+  required
+  />
 
   <label for="role">Role:</label>
-  <input id="role" formControlName="role" required>
+  <input
+    id="role"
+    formControlName="role"
+    [appHighlightOnFocus]="'#fff3cd'"
+  required
+  />
 
   <label for="isOnCall">On Call:</label>
-  <input type="checkbox" id="isOnCall" formControlName="isOnCall">
+  <input
+    type="checkbox"
+    id="isOnCall"
+    formControlName="isOnCall"
+    [appHighlightOnFocus]="'#f5f5f5'"
+  />
 
   <label for="imageUrl">Image URL:</label>
-  <input id="imageUrl" formControlName="imageUrl" required>
+  <input
+    id="imageUrl"
+    formControlName="imageUrl"
+    [appHighlightOnFocus]="'#d1ecf1'"
+  required
+  />
 
-  <button type="submit">Add/Update Item</button>
+  <button type="submit" [disabled]="modifyForm.invalid">Add/Update Item</button>
 </form>
