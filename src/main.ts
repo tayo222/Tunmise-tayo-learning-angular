@@ -6,6 +6,7 @@ import { PageNotFoundComponent } from './app/page-not-found/page-not-found.compo
 import { ModifyListItemComponent } from './app/modify-list-item/modify-list-item.component'; // Ensure the path is correct
 import { appConfig } from './app/app.config';
 import {ModifyComponent} from "./app/modify/modify.component";
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 // Define your routes
 const routes: Routes = [
@@ -19,6 +20,6 @@ const routes: Routes = [
 bootstrapApplication(AppComponent, {
   providers: [
     provideRouter(routes),
-    ...appConfig.providers
+    ...appConfig.providers, provideAnimationsAsync()
   ]
 }).catch((err) => console.error(err));

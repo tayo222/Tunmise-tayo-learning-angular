@@ -3,13 +3,15 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { ActivatedRoute, Router } from '@angular/router';
 import { HospitalStaffService } from '../services/hospital-staff.service';
 import { HospitalUser } from '../Shared/HospitalUser';
-import {HighlightOnFocusDirective} from "../highlight-on-focus.directive"; // Import your interface here
+import {HighlightOnFocusDirective} from "../highlight-on-focus.directive";
+import {MatFormField} from "@angular/material/form-field";
+import {MatCheckbox} from "@angular/material/checkbox"; // Import your interface here
 
 @Component({
   selector: 'app-modify',
   templateUrl: './modify.component.html',
   standalone: true,
-  imports: [ReactiveFormsModule, HighlightOnFocusDirective],
+  imports: [ReactiveFormsModule, HighlightOnFocusDirective, MatFormField, MatCheckbox],
   styleUrls: ['./modify.component.css']
 })
 export class ModifyComponent implements OnInit {

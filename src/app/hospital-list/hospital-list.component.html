@@ -1,24 +1,39 @@
-<div class="hospital-list">
-  <h2>Hospital Staff</h2>
-  <ul>
-    <li *ngFor="let staff of hospitalStaff" [appHoverHighlight]="'#f0f8ff'">
-      <img
-        [ngSrc]="staff.imageUrl"
-        alt="{{ staff.firstName }} {{ staff.lastName }}"
-        class="staff-image"
-        width="150"
-        height="150"
-      />
-      <div class="staff-details" [appHoverHighlight]="'#e6f7ff'">
-        <h3>{{ staff.firstName }} {{ staff.lastName }}</h3>
-        <p>Department: {{ staff.department }}</p>
-        <p>Role: {{ staff.role }}</p>
-        <p *ngIf="staff.isOnCall">Currently On Call</p>
-      </div>
-      <div class="staff-actions">
-        <button [appHoverHighlight]="'#d3f9d8'" (click)="editStaff(staff.id)">Edit</button>
-        <button [appHoverHighlight]="'#f8d7da'" (click)="deleteStaff(staff.id)">Delete</button>
-      </div>
-    </li>
-  </ul>
-</div>
+<mat-card class="hospital-list">
+  <mat-toolbar color="primary">
+    <h2>Hospital Staff</h2>
+  </mat-toolbar>
+  <mat-list>
+    <mat-list-item *ngFor="let staff of hospitalStaff">
+      <mat-card class="staff-item">
+        <mat-card-header>
+          <div mat-card-avatar>
+            <img
+              mat-card-avatar
+              [ngSrc]="staff.imageUrl"
+              alt="{{ staff.firstName }} {{ staff.lastName }}"
+              class="staff-image"
+              width="50"
+              height="50"
+            />
+          </div>
+          <mat-card-title>{{ staff.firstName }} {{ staff.lastName }}</mat-card-title>
+          <mat-card-subtitle>Department: {{ staff.department }}</mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content>
+          <p>Role: {{ staff.role }}</p>
+          <p *ngIf="staff.isOnCall" class="on-call">Currently On Call</p>
+        </mat-card-content>
+
+        <mat-card-actions align="end">
+          <button mat-raised-button color="accent" (click)="editStaff(staff.id)">
+            Edit
+          </button>
+          <button mat-raised-button color="warn" (click)="deleteStaff(staff.id)">
+            Delete
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-list-item>
+  </mat-list>
+</mat-card>

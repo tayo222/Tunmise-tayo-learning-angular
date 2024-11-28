@@ -1,11 +1,12 @@
 import {Component, Input} from '@angular/core';
 import { NgIf } from '@angular/common';
+import {MatCard, MatCardActions, MatCardContent, MatCardHeader} from "@angular/material/card";
 
 
 @Component({
   selector: 'app-hospital-list-item',
   standalone: true,
-  imports: [NgIf,],
+  imports: [NgIf, MatCard, MatCardHeader, MatCardContent, MatCardActions,],
   templateUrl: './hospital-list-item.component.html',
   styleUrl: './hospital-list-item.component.css'
 })
@@ -18,4 +19,12 @@ export class HospitalListItemComponent {
     role: string;
     isOnCall?: boolean;
   } | undefined;
+
+  editStaff(id: number | undefined) {
+    
+  }
+
+  deleteStaff(id: number | undefined) {
+    
+  }
 }

@@ -2,12 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'; // Import Router for navigation
 import { HospitalStaffService } from '../services/hospital-staff.service';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
-import {HoverHighlightDirective} from "../hover-highlight.directive";
+import { HoverHighlightDirective } from "../hover-highlight.directive";
+import { MatCard, MatCardActions, MatCardContent, MatCardHeader, MatCardSubtitle, MatCardTitle } from "@angular/material/card";
+import { MatListItem, MatList } from "@angular/material/list";
+import { MatToolbar } from "@angular/material/toolbar";
 
 @Component({
   selector: 'app-hospital-list',
   standalone: true,
-  imports: [CommonModule, NgOptimizedImage, HoverHighlightDirective],
+  imports: [
+    CommonModule, NgOptimizedImage, HoverHighlightDirective,
+    MatCardActions, MatCardContent, MatCardSubtitle, MatCardTitle,
+    MatCardHeader, MatListItem, MatCard, MatList, MatToolbar
+  ],
   templateUrl: './hospital-list.component.html',
   styleUrls: ['./hospital-list.component.css']
 })
@@ -52,5 +59,4 @@ export class HospitalListComponent implements OnInit {
       });
     }
   }
-
 }

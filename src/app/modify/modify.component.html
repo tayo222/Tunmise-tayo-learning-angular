@@ -1,53 +1,66 @@
 <h2>Modify Staff Member</h2>
 
-<form [formGroup]="modifyForm" (ngSubmit)="onSubmit()">
-  <label for="firstName">First Name:</label>
-  <input
-    id="firstName"
-    formControlName="firstName"
-    [appHighlightOnFocus]="'#d3f9d8'"
-  required
-  />
+<form [formGroup]="modifyForm" (ngSubmit)="onSubmit()" class="modify-form">
+  <mat-form-field appearance="fill">
+    <mat-label>First Name</mat-label>
+    <input
+      matInput
+      id="firstName"
+      formControlName="firstName"
+      required
+    />
+  </mat-form-field>
 
-  <label for="lastName">Last Name:</label>
-  <input
-    id="lastName"
-    formControlName="lastName"
-    [appHighlightOnFocus]="'#f8d7da'"
-  required
-  />
+  <mat-form-field appearance="fill">
+    <mat-label>Last Name</mat-label>
+    <input
+      matInput
+      id="lastName"
+      formControlName="lastName"
+      required
+    />
+  </mat-form-field>
 
-  <label for="department">Department:</label>
-  <input
-    id="department"
-    formControlName="department"
-    [appHighlightOnFocus]="'#e6f7ff'"
-  required
-  />
+  <mat-form-field appearance="fill">
+    <mat-label>Department</mat-label>
+    <input
+      matInput
+      id="department"
+      formControlName="department"
+      required
+    />
+  </mat-form-field>
 
-  <label for="role">Role:</label>
-  <input
-    id="role"
-    formControlName="role"
-    [appHighlightOnFocus]="'#fff3cd'"
-  required
-  />
+  <mat-form-field appearance="fill">
+    <mat-label>Role</mat-label>
+    <input
+      matInput
+      id="role"
+      formControlName="role"
+      required
+    />
+  </mat-form-field>
 
-  <label for="isOnCall">On Call:</label>
-  <input
-    type="checkbox"
-    id="isOnCall"
-    formControlName="isOnCall"
-    [appHighlightOnFocus]="'#f5f5f5'"
-  />
+  <mat-checkbox id="isOnCall" formControlName="isOnCall">
+    On Call
+  </mat-checkbox>
 
-  <label for="imageUrl">Image URL:</label>
-  <input
-    id="imageUrl"
-    formControlName="imageUrl"
-    [appHighlightOnFocus]="'#d1ecf1'"
-  required
-  />
+  <mat-form-field appearance="fill">
+    <mat-label>Image URL</mat-label>
+    <input
+      matInput
+      id="imageUrl"
+      formControlName="imageUrl"
+      required
+    />
+  </mat-form-field>
 
-  <button type="submit" [disabled]="modifyForm.invalid">Add/Update Item</button>
+  <div class="form-actions">
+    <button mat-raised-button color="primary" type="submit" [disabled]="modifyForm.invalid">
+      Save
+    </button>
+    <button mat-raised-button color="warn" type="reset">
+      Reset
+    </button>
+  </div>
 </form>

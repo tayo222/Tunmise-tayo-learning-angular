@@ -1,5 +1,14 @@
 .hospital-list-item {
-  border: 2px solid black; /* Set a 2 pixel border */
-  padding: 10px;          /* Optional: Add some padding for better appearance */
-  margin: 10px 0;        /* Optional: Add margin between items */
+  border: 2px solid #ddd; /* Lighter border for a more modern look */
+  padding: 16px;          /* Increased padding for better spacing */
+  margin: 12px 0;         /* Margin between items */
+  border-radius: 8px;     /* Rounded corners for a cleaner design */
+  background-color: #ffffff; /* White background for each item */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for a raised effect */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.hospital-list-item:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* More prominent shadow on hover */
+  transform: translateY(-4px); /* Slight lift effect on hover */
 }
